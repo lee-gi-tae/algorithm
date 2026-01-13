@@ -56,6 +56,9 @@ def move(lis, d):
 
 def cal(lis, cnt):
     global answer
+    current_max = max(map(max, lis))
+    if current_max * (2 ** (5 - cnt)) <= answer:
+        return
     answer = max(answer, max(map(max, lis)))
     if cnt == 5:
         return
